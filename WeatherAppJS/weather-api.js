@@ -59,7 +59,7 @@ function fetchWeather(url, location) {
     `UvIndex: ${data.data.values.uvIndex}<br>Precipitation: ${data.data.values.precipitationProbability}%`;
 
   })
-  .catch(error => document.body.innerHTML = 'Could not fetch weather, please wait')
+  .catch(error => document.body.innerHTML = 'Could not fetch weather, only 25 requests per hour, please wait')
 }
 
 function getLocation() {
