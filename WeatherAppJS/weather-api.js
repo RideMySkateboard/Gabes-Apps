@@ -44,7 +44,7 @@ function fetchWeather(url, location) {
     } else if (data.data.values.rainIntensity > 1) {
       weatherCondition = 'Rain';
     }
-    weatherImage.innerHTML = `<img src="../../Images/${weatherCondition}.svg" height="100px">`
+    weatherImage.innerHTML = `<img src="Images/${weatherCondition}.svg" height="100px">`
     let weatherCode = data.data.values.weatherCode;
     conditionsElement.innerHTML = weatherIcons[weatherCode];
     document.querySelector('.rain-uv')
