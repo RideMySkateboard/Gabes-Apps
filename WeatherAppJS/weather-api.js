@@ -2,6 +2,8 @@ import { weatherIcons } from './Weather-icons.js';
 //Get method for Fetch
 const options = {method: 'GET', headers: {accept: 'application/json'}};
 
+getLocation();
+
 function celsiusToFahrenheit(celsius) {
     return (9 / 5 * celsius) + 32;
   }
@@ -35,7 +37,12 @@ function fetchWeather(url, location) {
     console.log(data);
     
     temperatureElement.innerHTML = `${Math.round(celsiusToFahrenheit(data.data.values.temperature))}°`;
-    cityElement.innerHTML = location.toUpperCase();
+      
+    if (searchElement.value) {
+      cityElement.innerHTML = location.toUpperCase();
+    } else {
+      cityElement.innerHTML = "Your Location";
+    }
     let weatherCondition;
     if (data.data.values.cloudCover <= 30 && data.data.values.rainIntensity < 5) {
       weatherCondition = 'Sunny';
@@ -53,4 +60,20 @@ function fetchWeather(url, location) {
 
   })
   .catch(error => console.log('Could not fetch weather'))
+}
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(myLocationsWeather);
+  } else {
+    cityElement.innerHTML.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function myLocationsWeather(position) {
+  const latitude = position.coords.latitude;
+  const longitude = position.coords.longitude;
+  const location = `${latitude},${longitude}`;
+  const url = `https://api.tomorrow.io/v4/weather/realtime?location=${location}&apikey=${apiKey}`;
+  fetchWeather(url, location);
 }
