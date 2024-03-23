@@ -56,10 +56,11 @@ function fetchWeather(url, location) {
     conditionsElement.innerHTML = weatherIcons[weatherCode];
     document.querySelector('.rain-uv')
     .innerHTML = 
-    `UvIndex: ${data.data.values.uvIndex}<br>Precipitation: ${data.data.values.precipitationProbability}%`;
+    `UvIndex: ${data.data.values.uvIndex}<br>Precipitation: 
+        ${data.data.values.precipitationProbability}%<br>Humidity: ${data.data.values.humidity}%`;
 
   })
-  .catch(error => document.body.innerHTML = 'Could not fetch weather, only 25 requests per hour, please wait')
+  .catch(error => alert('Could not fetch weather, please wait'))
 }
 
 function getLocation() {
