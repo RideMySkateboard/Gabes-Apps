@@ -94,3 +94,10 @@ body {
     text-align: left;
     font-size: 15px;
   }
+ .creator {
+    text-align: center;
+    opacity: .6;
+  }
+  .creator:hover {
+    opacity: 1;
+  }
