@@ -39,9 +39,11 @@ function fetchWeather(url, location) {
     temperatureElement.innerHTML = `${Math.round(celsiusToFahrenheit(data.data.values.temperature))}°`;
       
     if (searchElement.value) {
-      cityElement.innerHTML = location.toUpperCase();
+      let exactLocation = data.location.name.split(", ");
+      cityElement.innerHTML = exactLocation[0] + ", " + exactLocation[2];
+      //cityElement.innerHTML = location.toUpperCase();
     } else {
-      cityElement.innerHTML = "Your Location";
+      cityElement.innerHTML = "My Location";
     }
     let weatherCondition;
     if (data.data.values.cloudCover <= 30 && data.data.values.rainIntensity < 5) {
@@ -56,8 +58,8 @@ function fetchWeather(url, location) {
     conditionsElement.innerHTML = weatherIcons[weatherCode];
     document.querySelector('.rain-uv')
     .innerHTML = 
-    `UvIndex: ${data.data.values.uvIndex}<br>Precipitation: 
-        ${data.data.values.precipitationProbability}%<br>Humidity: ${data.data.values.humidity}%`;
+    `<span class="bold">UVIndex</span> ${data.data.values.uvIndex}<br><span class="bold">Precipitation</span> 
+        ${data.data.values.precipitationProbability}%<br><span class="bold">Humidity</span> ${data.data.values.humidity}%`;
 
   })
   .catch(error => alert('Could not fetch weather, please wait'))
