@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Gabe's Weather App</title>
-        <!--“Powered by Tomorrow.io-->
-        <link href="WeatherAppCSS/weather-app.css" rel="stylesheet" type="text/css">
+      <title>Gabe's Weather App</title>
+      <!--“Powered by Tomorrow.io-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <link href="WeatherAppCSS/weather-app.css" rel="stylesheet" type="text/css">
         
     </head>
     <body>
         <div class="parent-element">
             <div class="element1">  
-                <input class="search-bar" placeholder="Search Location">
+                <input class="search-bar" type="city" placeholder="City Name">
                 <button class="search-button">Search</button>
             </div>
 
@@ -20,14 +23,14 @@
                   <img src="Images/Sunny.svg" height="100px">
                 </div>
                 <div class="grid-item tempature js-temperature">72°</div> 
-                <div class="grid-item rain-uv">UvIndex:<br>Precipitation:</div>
-                
+                <div class="grid-item rain-uv">UvIndex:<br>Precipitation:%<br>Humidity:</div>
+                <div class="the-goat">Developed by Gabe Garcia</div>
             </div>
             <div class="four-day-forecast">
-                <div class="day1">day1</div>
-                <div class="day2">day2</div>
-                <div class="day3">day3</div>
-                <div class="day4">day4</div>
+                <div class="day day1">day1</div>
+                <div class="day day2">day2</div>
+                <div class="day day3">day3</div>
+                <div class="day day4">day4</div>
             </div>
         </div>
         <script src="WeatherAppJS/weather-api.js" type="module"></script>
