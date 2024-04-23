@@ -1,103 +1,115 @@
 body {
-    background:rgb(75, 177, 236);
-  }
+  background:rgb(75, 177, 236);
+  font-family: "Montserrat", sans-serif;
+  ;
+}
+
+.parent-element {
+  display: grid;
   
-  .parent-element {
-    display: grid;
-    
-  }
+}
+
+.element1 {
+  justify-self: center;
   
-  .element1 {
-    justify-self: center;
-    
-  }
-  .search-bar {
-    width: 400px;
-    height: 30px;
-    border-radius: 30px;
-    border: none;
-    padding: 9px 4px 9px 40px;
-    background: white url("../Images/search.svg") no-repeat 8px;
-    background-size: 25px;
-    outline: none;
-    opacity: .6;
-  }
-  .search-button {
-    height: 47px;
-    width: 100px;
-    border-radius: 30px;
-    border: none;
-    outline: none;
-    opacity: .6;
-    cursor: pointer;
-  }
-  .grid-container {
-    height: 400px;
-    width: 540px;
-    margin-bottom: 10px;
-    margin-top: 40px;
-    border-radius: 17px;
-    justify-self: center;
-    background: rgb(255, 255, 255, .7);
-    display: grid;
-  }
-  .grid-item {
-    text-align: center;
-    padding: 20px;
-    
-  }
-  .city-state {
-    font-family: Arial;
-    font-weight: bold;
-    color:black;
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    font-size: 25px;
-    
-  }
-  .weather-image {
-    grid-column: 2;
-    grid-row: 1;
-    margin-top: 100px;
-    
-  }
-  .weather-conditions{
-    font-size: 20px;
-    grid-column: 2;
-    grid-row: 1;
-    margin-top: 40px;
-    color:black;
-    font-family: Arial;
-    margin-left: 40px;
-  }
-  .tempature {
-    font-family: Arial;
-    font-weight: bold;
-    color:black;
-    font-size: 65px;
-    grid-column: 1 / span 2;
-    grid-row: 2;
-    margin-bottom: 40px;
-  }
-  .four-day-forecast {
-    height: 300px;
-    width: 540px;
-    border-radius: 17px;
-    justify-self: center;
-    background: rgb(255, 255, 255, .7);
-    display: none;
-  }
-  .rain-uv {
-    font-family: Arial;
-    color:black;
-    font-weight: bold;
-    text-align: left;
-    font-size: 15px;
-  }
- .creator {
-    text-align: center;
-    opacity: .6;
-  }
-  .creator:hover {
-    opacity: 1;
-  }
+}
+.search-bar {
+  font-family: "Montserrat", sans-serif;
+  width: 400px;
+  height: 30px;
+  border-radius: 30px;
+  border: none;
+  padding: 9px 4px 9px 40px;
+  background: white url("../Images/search.svg") no-repeat 8px;
+  background-size: 25px;
+  outline: none;
+  opacity: .6;
+}
+.search-button {
+  height: 47px;
+  width: 100px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  opacity: .6;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+.grid-container {
+  height: 400px;
+  width: 540px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  border-radius: 17px;
+  justify-self: center;
+  background: rgb(255, 255, 255, .7);
+  /*display: grid;*/
+}
+.grid-item {
+  text-align: center;
+  padding: 20px;
+  
+}
+.city-state {
+  font-weight: 600;
+  color:black;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  font-size: 25px;
+  
+}
+.weather-conditions{
+  font-weight: 500;
+  font-size: 20px;
+  grid-column: 2;
+  grid-row: 1;
+  color:black;
+  padding-top: 0px;
+}
+.tempature {
+  font-weight: 600;
+  color:black;
+  font-size: 65px;
+  display: inline-block;
+  padding: 0px;
+  width: 50%;
+}
+.rain-uv {
+  font-family: "Montserrat", sans-serif;
+  color:black;
+  font-weight: 400;
+  font-size: 15px;
+  display: inline-block;
+  width: 49%;
+  padding: 0px;
+}
+.creator {
+  text-align: center;
+  opacity: .6;
+}
+.creator:hover {
+  opacity: 1;
+}
+.four-day-forecast {
+  background: rgb(255, 255, 255, .7);
+  height: 200px;
+  width: 540px;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  border-radius: 17px;
+  display: none;
+}
+.day {
+  text-align: center;
+  display: none;
+}
+.bold {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.the-goat {
+  padding-top: 42px;
+  text-align: center;
+  color: rgb(95, 93, 93);
+}
